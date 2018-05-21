@@ -8,3 +8,15 @@ c:\users\v-shmain\documents\visual studio 2015\Projects\RPG\RPG\obj\Debug\RPG.cs
 c:\users\v-shmain\documents\visual studio 2015\Projects\RPG\RPG\obj\Debug\RPG.exe
 c:\users\v-shmain\documents\visual studio 2015\Projects\RPG\RPG\obj\Debug\RPG.pdb
 c:\users\v-shmain\documents\visual studio 2015\Projects\RPG\RPG\obj\Debug\RPG.Hub.resources
+C:\Users\v-shmain\Documents\GitHub\CsharPG\RPG\bin\Debug\RPG.exe.config
+C:\Users\v-shmain\Documents\GitHub\CsharPG\RPG\obj\Debug\RPG.exe
+C:\Users\v-shmain\Documents\GitHub\CsharPG\RPG\obj\Debug\RPG.pdb
+C:\Users\v-shmain\Documents\GitHub\CsharPG\RPG\bin\Debug\RPG.exe
+C:\Users\v-shmain\Documents\GitHub\CsharPG\RPG\bin\Debug\RPG.pdb
+C:\Users\v-shmain\Documents\GitHub\CsharPG\RPG\obj\Debug\RPG.csprojResolveAssemblyReference.cache
+C:\Users\v-shmain\Documents\GitHub\CsharPG\RPG\obj\Debug\RPG.Form1.resources
+C:\Users\v-shmain\Documents\GitHub\CsharPG\RPG\obj\Debug\RPG.Hub.resources
+C:\Users\v-shmain\Documents\GitHub\CsharPG\RPG\obj\Debug\RPG.Properties.Resources.resources
+C:\Users\v-shmain\Documents\GitHub\CsharPG\RPG\obj\Debug\RPG.csproj.GenerateResource.Cache
+C:\Users\v-shmain\Documents\GitHub\CsharPG\RPG\obj\Debug\RPG.Map.resources
+C:\Users\v-shmain\Documents\GitHub\CsharPG\RPG\obj\Debug\RPG.LevelUp.resources

@@ -8,11 +8,18 @@ namespace RPG
 {
     public class Player: Character
     {
+        
         public Player()
             {
             health = 100;
             maxHealth = health;
             strength = 10;
-            }
+            playerFighter = true;
+    }
+        new public void levelUp()
+        {
+            level++;
+            LevelUp levelUp = new LevelUp();
+        }
     }
 }

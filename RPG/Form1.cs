@@ -13,7 +13,6 @@ namespace RPG
     public partial class Form1 : Form
     {
         Player hero = new Player();
-        private Boolean inCombat = false;
         public Form1()
         {
             InitializeComponent();
@@ -26,7 +25,7 @@ namespace RPG
                 this.Hide();
                 Hub hub = new Hub();
                 hero.name = textBox1.Text.ToString();
-                hub.updateHero(hero);
+                hub.initHero(hero);
                                 
             }
         }
@@ -35,6 +34,11 @@ namespace RPG
         {
             textBox1.Text = "";
             
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -38,6 +38,8 @@
             this.enemyHealthBar = new System.Windows.Forms.ProgressBar();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.pokeBox = new System.Windows.Forms.ComboBox();
+            this.selectHero = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -136,11 +138,31 @@
             this.groupBox2.Visible = false;
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
+            // pokeBox
+            // 
+            this.pokeBox.FormattingEnabled = true;
+            this.pokeBox.Location = new System.Drawing.Point(12, 108);
+            this.pokeBox.Name = "pokeBox";
+            this.pokeBox.Size = new System.Drawing.Size(77, 21);
+            this.pokeBox.TabIndex = 6;
+            // 
+            // selectHero
+            // 
+            this.selectHero.Location = new System.Drawing.Point(91, 108);
+            this.selectHero.Name = "selectHero";
+            this.selectHero.Size = new System.Drawing.Size(52, 21);
+            this.selectHero.TabIndex = 7;
+            this.selectHero.Text = "Select";
+            this.selectHero.UseVisualStyleBackColor = true;
+            this.selectHero.Click += new System.EventHandler(this.selectHero_Click);
+            // 
             // Hub
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(445, 348);
+            this.Controls.Add(this.selectHero);
+            this.Controls.Add(this.pokeBox);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.Test1);
@@ -169,5 +191,7 @@
         private System.Windows.Forms.ProgressBar enemyHealthBar;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ComboBox pokeBox;
+        private System.Windows.Forms.Button selectHero;
     }
 }

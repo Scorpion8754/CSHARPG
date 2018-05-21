@@ -13,17 +13,22 @@ namespace RPG
     public partial class Hub : Form
     {
         public Character theHero;
+        public List<Character> pokedex = new List<Character>();
         public Boolean inCombat = false;
         public Hub()
         {
             InitializeComponent();
+            
+            
         }
 
         public void Hub_Load(object sender, EventArgs e)
         {
             Test1.Show();
+            
         }
-        public void combat(Character first, Character second) 
+
+        public void combat(Character first, Character second) //The first monster passed through combat gets the first attack
         {
             inCombat = true;
             while (inCombat == true)
@@ -35,27 +40,45 @@ namespace RPG
                 printBox(first.name + " attacks " + second.name + " for " + first.strength + " damage.");
                 listBox1.Update();
                 update(second);
-                System.Threading.Thread.Sleep(1000);
+                System.Threading.Thread.Sleep(500);
                 second.attack(first);
                 printBox(second.name + " attacks " + first.name + " for " + second.strength + " damage.");
                 listBox1.Update();
                 update(first);
-                System.Threading.Thread.Sleep(1000);
+                System.Threading.Thread.Sleep(500);
             }
 
         }
         private void update(Character check)
         { //All this does is figure out what kind of Character is being passed and passes it through its respective update function...
-            Type checkClass = check.GetType(); //if ever in a scenario where youre not sure what kind of character you're updating...
-            if (checkClass.Equals(typeof(Player))) { updateHero(check); } //you can just put it through this function.
-            else { updateEnemy(check); }
+            //Type checkClass = check.GetType(); //if ever in a scenario where youre not sure what kind of character you're updating...
+            //if (checkClass.Equals(typeof(Player))) { updateHero(check); } //you can just put it through this function.
+            //else { updateEnemy(check); }
+            if(check.playerFighter == false) { updateEnemy(check); }
+            else { updateHero(check); }
         }
 
-
-        public void updateHero(Character hero) //updates all the player labels
+        public void initHero(Character hero)
         {
             this.Show();
             theHero = hero;
+
+
+            //testing shit
+            pokedex.Add(theHero);
+            Monster HobreRat = new Rat();
+            HobreRat.playerFighter = true;
+            HobreRat.name = "My Pet Rat";
+            pokedex.Add(HobreRat);
+            for (int i = 0; i < pokedex.Count(); i++)
+            {
+                pokeBox.Items.Add(i + 1 + ") " + pokedex[i].name);
+            }
+
+        }
+        public void updateHero(Character hero) //updates all the player labels
+        {
+            
             groupBox1.Text = hero.name;
             progressBar1.Maximum = hero.maxHealth;
             strLabel.Text = "Strength: " + hero.strength.ToString();
@@ -108,10 +131,8 @@ namespace RPG
         private void button1_Click(object sender, EventArgs e)
         {
             Rat ratboi = new Rat();
-            updateEnemy(ratboi);
             combat(ratboi, theHero);
-            update(theHero);
-            update(ratboi);
+            
         }
 
         private void Hub_FormClosed(object sender, FormClosedEventArgs e)
@@ -122,6 +143,15 @@ namespace RPG
         private void groupBox2_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void selectHero_Click(object sender, EventArgs e)
+        {
+            string valueString = pokeBox.SelectedItem.ToString();
+            valueString = valueString[0].ToString();
+            int value = int.Parse(valueString) - 1;
+            theHero = pokedex[value];
+            updateHero(theHero);
         }
     }
 }
