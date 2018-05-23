@@ -18,5 +18,17 @@ namespace RPG
             strength = 3;
             maxHealth = health;
         }
+
+    }
+    public class God : Monster
+    {
+        public God()
+        {
+            health = 666;
+            name = "Shane";
+            strength = 666;
+            maxHealth = health;
+        }
+
     }
 }

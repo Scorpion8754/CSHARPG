@@ -26,7 +26,6 @@ namespace RPG
                 Hub hub = new Hub();
                 hero.name = textBox1.Text.ToString();
                 hub.initHero(hero);
-                                
             }
         }
 

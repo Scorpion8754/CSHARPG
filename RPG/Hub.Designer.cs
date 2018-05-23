@@ -40,6 +40,8 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pokeBox = new System.Windows.Forms.ComboBox();
             this.selectHero = new System.Windows.Forms.Button();
+            this.FightButton = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -86,7 +88,7 @@
             this.Test1.Name = "Test1";
             this.Test1.Size = new System.Drawing.Size(75, 23);
             this.Test1.TabIndex = 1;
-            this.Test1.Text = "Combat Test";
+            this.Test1.Text = "Spawn Rat";
             this.Test1.UseVisualStyleBackColor = true;
             this.Test1.Visible = false;
             this.Test1.Click += new System.EventHandler(this.button1_Click);
@@ -129,7 +131,7 @@
             this.groupBox2.Controls.Add(this.enemyHealthBar);
             this.groupBox2.Controls.Add(this.enemyHealthLabel);
             this.groupBox2.Controls.Add(this.enemyStrLabel);
-            this.groupBox2.Location = new System.Drawing.Point(302, 19);
+            this.groupBox2.Location = new System.Drawing.Point(302, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(131, 90);
             this.groupBox2.TabIndex = 5;
@@ -143,12 +145,12 @@
             this.pokeBox.FormattingEnabled = true;
             this.pokeBox.Location = new System.Drawing.Point(12, 108);
             this.pokeBox.Name = "pokeBox";
-            this.pokeBox.Size = new System.Drawing.Size(77, 21);
+            this.pokeBox.Size = new System.Drawing.Size(82, 21);
             this.pokeBox.TabIndex = 6;
             // 
             // selectHero
             // 
-            this.selectHero.Location = new System.Drawing.Point(91, 108);
+            this.selectHero.Location = new System.Drawing.Point(95, 108);
             this.selectHero.Name = "selectHero";
             this.selectHero.Size = new System.Drawing.Size(52, 21);
             this.selectHero.TabIndex = 7;
@@ -156,11 +158,33 @@
             this.selectHero.UseVisualStyleBackColor = true;
             this.selectHero.Click += new System.EventHandler(this.selectHero_Click);
             // 
+            // FightButton
+            // 
+            this.FightButton.Location = new System.Drawing.Point(185, 59);
+            this.FightButton.Name = "FightButton";
+            this.FightButton.Size = new System.Drawing.Size(75, 23);
+            this.FightButton.TabIndex = 8;
+            this.FightButton.Text = "Fight";
+            this.FightButton.UseVisualStyleBackColor = true;
+            this.FightButton.Click += new System.EventHandler(this.button1_Click_2);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(302, 108);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(131, 23);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "Just Fuck My Shit Up";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Hub
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(445, 348);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.FightButton);
             this.Controls.Add(this.selectHero);
             this.Controls.Add(this.pokeBox);
             this.Controls.Add(this.groupBox2);
@@ -193,5 +217,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox pokeBox;
         private System.Windows.Forms.Button selectHero;
+        private System.Windows.Forms.Button FightButton;
+        private System.Windows.Forms.Button button2;
     }
 }

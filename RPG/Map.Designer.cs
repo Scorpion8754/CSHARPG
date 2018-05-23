@@ -40,6 +40,7 @@
             this.startAreaButton.TabIndex = 0;
             this.startAreaButton.Text = "X";
             this.startAreaButton.UseVisualStyleBackColor = true;
+            this.startAreaButton.Click += new System.EventHandler(this.startAreaButton_Click);
             // 
             // button1
             // 

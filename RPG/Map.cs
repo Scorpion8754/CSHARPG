@@ -16,5 +16,10 @@ namespace RPG
         {
             InitializeComponent();
         }
+
+        private void startAreaButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

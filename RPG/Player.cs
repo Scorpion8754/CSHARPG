@@ -15,11 +15,18 @@ namespace RPG
             maxHealth = health;
             strength = 10;
             playerFighter = true;
+            pots.Add(new HealthPotion());
     }
-        new public void levelUp()
+        public override void levelUp()
         {
             level++;
             LevelUp levelUp = new LevelUp();
+        }
+        public override void death()
+        {
+            
+            
+            
         }
     }
 }
