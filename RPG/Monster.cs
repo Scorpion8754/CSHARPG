@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace RPG
 {
-    public class Monster: Character
+    public class Monster : Character
     {
     }
-    public class Rat: Monster
+    public class Rat : Monster
     {
         public Rat()
         {
@@ -20,15 +20,20 @@ namespace RPG
         }
 
     }
+
     public class God : Monster
     {
         public God()
         {
             health = 666;
-            name = "Shane";
+            name = "Shrek";
             strength = 666;
             maxHealth = health;
         }
-
+        public override void hurt(int amount)
+        {
+            if (playerFighter == true) { health -= amount / armor; }
+            else { health += amount / armor; maxHealth = health; }
+        }
     }
 }

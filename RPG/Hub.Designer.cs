@@ -42,6 +42,7 @@
             this.selectHero = new System.Windows.Forms.Button();
             this.FightButton = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.attackButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -160,7 +161,7 @@
             // 
             // FightButton
             // 
-            this.FightButton.Location = new System.Drawing.Point(185, 59);
+            this.FightButton.Location = new System.Drawing.Point(185, 69);
             this.FightButton.Name = "FightButton";
             this.FightButton.Size = new System.Drawing.Size(75, 23);
             this.FightButton.TabIndex = 8;
@@ -170,19 +171,29 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(302, 108);
+            this.button2.Location = new System.Drawing.Point(185, 47);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(131, 23);
+            this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 9;
-            this.button2.Text = "Just Fuck My Shit Up";
+            this.button2.Text = "Kill me";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // attackButton
+            // 
+            this.attackButton.Location = new System.Drawing.Point(7, 148);
+            this.attackButton.Name = "attackButton";
+            this.attackButton.Size = new System.Drawing.Size(75, 23);
+            this.attackButton.TabIndex = 10;
+            this.attackButton.Text = "Attack";
+            this.attackButton.UseVisualStyleBackColor = true;
             // 
             // Hub
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(445, 348);
+            this.Controls.Add(this.attackButton);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.FightButton);
             this.Controls.Add(this.selectHero);
@@ -219,5 +230,6 @@
         private System.Windows.Forms.Button selectHero;
         private System.Windows.Forms.Button FightButton;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button attackButton;
     }
 }

@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RPG
 {
@@ -19,6 +17,8 @@ namespace RPG
         public int armor = 1;
         public int myID;
         public Boolean playerFighter = false;
+        public event EventHandler Death;
+
         public Character()
         {
             myID = Hub.monsterID;
@@ -26,18 +26,28 @@ namespace RPG
         }
         public virtual void combatMove(Character enemy)
         {
-            attack(enemy);
+            if (playerFighter == false)
+            {
+                attack(enemy);
+            }
+            else
+            {
+                attack(enemy);
+            }
         }
+
         public virtual void attack(Character enemy)
         {
             enemy.hurt(strength);
             level = 1;
-            neededxp = 100 * (level * 1.33); 
+            neededxp = 100 * (level * 1.33);
         }
-        public  void hurt(int amount) //Each character has a hurt function instead of just subtracting health...
+
+        public virtual void hurt(int amount) //Each character has a hurt function instead of just subtracting health...
         { //in the attack function because it leaves it open to add armor modifiers
             health -= amount / armor;
         }
+
         public virtual void levelUp()
         {
             level++;
@@ -47,12 +57,26 @@ namespace RPG
         }
         public virtual void death()
         {
-            System.Windows.Forms.MessageBox.Show(name + " died!");
-            health = 0;
-            Hub.theHero = Hub.pokedex[0];
-            
-            //if(playerFighter == true)
-           // {
+
+            if (Death != null) { Death(this, EventArgs.Empty); }
+            if (playerFighter == true)
+            {
+                health = 0;
+                if (Hub.pokedex.Count > 0)
+                {
+                    for (int i = 0; i < Hub.pokedex.Count(); i++)
+                    {
+                        if (Hub.pokedex[i].myID == myID)
+                        {
+                            Hub.pokedex.RemoveAt(i);
+                        }
+
+                    }
+                    Hub.theHero = Hub.pokedex[0];
+                    Hub.pokedex.RemoveAt(0);
+                }
+            }
+            // {
             //    for (int i = 0; i < Hub.pokedex.Count(); i++)           
             //    {
             //        if (Hub.pokedex[i].myID == myID)
@@ -64,13 +88,15 @@ namespace RPG
             //                
             //            }
             //    }
-                    
+
             //    }
             //}
 
 
+
         }
 
+
     }
-    
+
 }
