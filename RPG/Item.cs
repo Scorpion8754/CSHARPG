@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RPG
+﻿namespace RPG
 {
     class Item
     {
@@ -23,7 +17,9 @@ namespace RPG
         }
         public void Use(Character user)
         {
-            user.health += 10;
+            user.health += healthValue;
+            user.pots.Remove(this);
+            if (user.health > user.maxHealth) { user.health = user.maxHealth; }
         }
     }
 }

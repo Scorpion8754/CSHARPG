@@ -9,12 +9,12 @@
             maxHealth = health;
             strength = 10;
             playerFighter = true;
-            pots.Add(new HealthPotion());
+            for (int i = 0; i < 5; i++)
+            {
+                pots.Add(new HealthPotion());
+            }
         }
-        public override void combatMove(Character enemy)
-        {
-            attack(enemy);
-        }
+
         public override void levelUp()
         {
             level++;

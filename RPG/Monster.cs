@@ -18,7 +18,6 @@ namespace RPG
             strength = 3;
             maxHealth = health;
         }
-
     }
 
     public class God : Monster
@@ -26,7 +25,7 @@ namespace RPG
         public God()
         {
             health = 666;
-            name = "Shrek";
+            name = "Punished Shane";
             strength = 666;
             maxHealth = health;
         }

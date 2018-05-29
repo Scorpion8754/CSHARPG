@@ -17,24 +17,29 @@ namespace RPG
         public int armor = 1;
         public int myID;
         public Boolean playerFighter = false;
+
         public event EventHandler Death;
+        public event EventHandler PlayerMove;
 
         public Character()
         {
             myID = Hub.monsterID;
             Hub.monsterID += 1;
         }
-        public virtual void combatMove(Character enemy)
+        public virtual string combatMove(Character enemy)
         {
-            if (playerFighter == false)
+            if (health < maxHealth / 2 && pots.Count > 1)
             {
-                attack(enemy);
+                pots[0].Use(this);
+                return "heal";
             }
             else
             {
                 attack(enemy);
+                return "attack";
             }
         }
+
 
         public virtual void attack(Character enemy)
         {
@@ -76,23 +81,6 @@ namespace RPG
                     Hub.pokedex.RemoveAt(0);
                 }
             }
-            // {
-            //    for (int i = 0; i < Hub.pokedex.Count(); i++)           
-            //    {
-            //        if (Hub.pokedex[i].myID == myID)
-            //        {
-            //            Hub.pokedex.RemoveAt(i);
-            //           for(int z = 0; z < Hub.pokedex.Count(); z++)
-            //            {
-            //                Hub.theHero = Hub.pokedex[z];
-            //                
-            //            }
-            //    }
-
-            //    }
-            //}
-
-
 
         }
 

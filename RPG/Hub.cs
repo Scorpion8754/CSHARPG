@@ -12,6 +12,7 @@ namespace RPG
         public static int monsterID;
         public static List<Character> pokedex = new List<Character>();
         public Boolean inCombat = false;
+        public Boolean playerTurn = true;
         public Hub()
         {
             InitializeComponent();
@@ -22,19 +23,27 @@ namespace RPG
             Test1.Show();
         }
 
-        public void combat(Character first, Character second) //The first monster passed through combat gets the first attack
+        public void combat() //The first monster passed through combat attacks the second
         {
-            update(second);
-            update(first);
-            first.attack(second);
-            printBox(first.name + " attacks " + second.name + " for " + first.strength + " damage.");
-            update(second);
-            System.Threading.Thread.Sleep(500);
-            if (second.health > 0)
+            if (inCombat == true)
             {
-                combat(second, first);
+                update(theHero);
+                update(theEnemy);
+                if (playerTurn == false)
+                {
+                    string action = theEnemy.combatMove(theHero);
+                    if (action == "attack") { printBox(theEnemy.name + " attacks " + theHero.name + " for " + theEnemy.strength.ToString() + " damage."); }
+                    if (action == "heal") { printBox(theEnemy.name + " uses a potion and restores" + theEnemy.pots[0].healthValue.ToString() + " health."); update(theEnemy); }
+                    playerTurn = true;
+                    combat();
+                }
+                else
+                {
+                    attackButton.Show();
+                    PotionButton.Show();
+                }
+                update(theHero);
             }
-
         }
 
         private void update(Character check)
@@ -47,6 +56,8 @@ namespace RPG
         public void initHero(Character hero)
         {
             this.Show();
+            hero.health = hero.maxHealth;
+            hero.Death += playerDeath;
             theHero = hero;
             //testing stuff
             Monster HobreRat = new Rat();
@@ -55,7 +66,6 @@ namespace RPG
             pokedex.Add(HobreRat);
             pokedex.Add(new God());
             pokedex.Add(new Rat());
-
             updateHero(hero); //this should (probably) always be on the bottom
         }
 
@@ -65,13 +75,13 @@ namespace RPG
             progressBar1.Maximum = hero.maxHealth;
             strLabel.Text = "Strength: " + hero.strength.ToString();
             healthLabel.Text = hero.health.ToString();
+            PotionButton.Text = "Potion (" + theHero.pots.Count.ToString() + ")";
             if (hero.health > 0)
             {
                 progressBar1.Value = hero.health;
             }
             else
             { //DEATH
-                if (hero.myID == 0) { Application.Exit(); }
                 hero.health = 0;
                 hero.Death += killFeed;
                 hero.death();
@@ -95,6 +105,7 @@ namespace RPG
                 pokeBox.Items.Add(i + 1 + ") " + pokedex[i].name);
             }
         }
+
 
         public void updateEnemy(Character enemy) //ENEMY UPDATE FUNCTION
         {
@@ -142,11 +153,13 @@ namespace RPG
             ratboi.health = 50;
             ratboi.maxHealth = 50;
             updateEnemy(theEnemy);
+            combat();
         }
         private void button2_Click(object sender, EventArgs e)
         { //COMBAT TEST
             theEnemy = new God();
             updateEnemy(theEnemy);
+            combat();
         }
 
         private void Hub_FormClosed(object sender, FormClosedEventArgs e)
@@ -184,19 +197,50 @@ namespace RPG
         {
             if (inCombat == true)
             {
-                combat(theHero, theEnemy);
+                combat();
             }
         }
         public void killFeed(object sender, EventArgs e)
         {
             Character c = sender as Character;
             printBox(c.name + " died!");
-            if (c.myID == 0) { Application.Exit(); }
-
         }
-        public void playerTurn(object sender, EventArgs e)
-        {
 
+        public void playerDeath(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+
+        private void attackButton_Click(object sender, EventArgs e)
+        {
+            if (inCombat == true && playerTurn == true)
+            {
+                theHero.attack(theEnemy);
+                printBox(theHero.name + " attacks " + theEnemy.name + " for " + theHero.strength.ToString() + " damage.");
+                updateEnemy(theEnemy);
+                playerTurn = false;
+                attackButton.Hide();
+                PotionButton.Hide();
+                System.Threading.Thread.Sleep(1000);
+                combat();
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Character user = theHero;
+            if (user.pots.Count > 0 && playerTurn == true)
+            {
+                printBox(user.name + " uses a health potion and restores " + user.pots[0].healthValue.ToString() + " health.");
+                user.pots[0].Use(user);
+                updateHero(theHero);
+                playerTurn = false;
+                PotionButton.Hide();
+                attackButton.Hide();
+                System.Threading.Thread.Sleep(1000);
+                combat();
+            }
         }
     }
 }

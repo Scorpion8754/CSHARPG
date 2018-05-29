@@ -40,9 +40,9 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pokeBox = new System.Windows.Forms.ComboBox();
             this.selectHero = new System.Windows.Forms.Button();
-            this.FightButton = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.attackButton = new System.Windows.Forms.Button();
+            this.PotionButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -159,16 +159,6 @@
             this.selectHero.UseVisualStyleBackColor = true;
             this.selectHero.Click += new System.EventHandler(this.selectHero_Click);
             // 
-            // FightButton
-            // 
-            this.FightButton.Location = new System.Drawing.Point(185, 69);
-            this.FightButton.Name = "FightButton";
-            this.FightButton.Size = new System.Drawing.Size(75, 23);
-            this.FightButton.TabIndex = 8;
-            this.FightButton.Text = "Fight";
-            this.FightButton.UseVisualStyleBackColor = true;
-            this.FightButton.Click += new System.EventHandler(this.button1_Click_2);
-            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(185, 47);
@@ -181,21 +171,34 @@
             // 
             // attackButton
             // 
-            this.attackButton.Location = new System.Drawing.Point(7, 148);
+            this.attackButton.Location = new System.Drawing.Point(12, 161);
             this.attackButton.Name = "attackButton";
             this.attackButton.Size = new System.Drawing.Size(75, 23);
             this.attackButton.TabIndex = 10;
             this.attackButton.Text = "Attack";
             this.attackButton.UseVisualStyleBackColor = true;
+            this.attackButton.Visible = false;
+            this.attackButton.Click += new System.EventHandler(this.attackButton_Click);
+            // 
+            // PotionButton
+            // 
+            this.PotionButton.Location = new System.Drawing.Point(93, 161);
+            this.PotionButton.Name = "PotionButton";
+            this.PotionButton.Size = new System.Drawing.Size(82, 23);
+            this.PotionButton.TabIndex = 11;
+            this.PotionButton.Text = "Use Potion";
+            this.PotionButton.UseVisualStyleBackColor = true;
+            this.PotionButton.Visible = false;
+            this.PotionButton.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // Hub
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(445, 348);
+            this.Controls.Add(this.PotionButton);
             this.Controls.Add(this.attackButton);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.FightButton);
             this.Controls.Add(this.selectHero);
             this.Controls.Add(this.pokeBox);
             this.Controls.Add(this.groupBox2);
@@ -228,8 +231,8 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox pokeBox;
         private System.Windows.Forms.Button selectHero;
-        private System.Windows.Forms.Button FightButton;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button attackButton;
+        private System.Windows.Forms.Button PotionButton;
     }
 }
