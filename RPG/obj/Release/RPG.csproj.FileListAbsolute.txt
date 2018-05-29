@@ -1,0 +1,11 @@
+C:\Users\v-shmain\Documents\GitHub\CsharPG\RPG\bin\Release\RPG.exe.config
+C:\Users\v-shmain\Documents\GitHub\CsharPG\RPG\bin\Release\RPG.exe
+C:\Users\v-shmain\Documents\GitHub\CsharPG\RPG\bin\Release\RPG.pdb
+C:\Users\v-shmain\Documents\GitHub\CsharPG\RPG\obj\Release\RPG.Form1.resources
+C:\Users\v-shmain\Documents\GitHub\CsharPG\RPG\obj\Release\RPG.Hub.resources
+C:\Users\v-shmain\Documents\GitHub\CsharPG\RPG\obj\Release\RPG.LevelUp.resources
+C:\Users\v-shmain\Documents\GitHub\CsharPG\RPG\obj\Release\RPG.Map.resources
+C:\Users\v-shmain\Documents\GitHub\CsharPG\RPG\obj\Release\RPG.Properties.Resources.resources
+C:\Users\v-shmain\Documents\GitHub\CsharPG\RPG\obj\Release\RPG.csproj.GenerateResource.Cache
+C:\Users\v-shmain\Documents\GitHub\CsharPG\RPG\obj\Release\RPG.exe
+C:\Users\v-shmain\Documents\GitHub\CsharPG\RPG\obj\Release\RPG.pdb
