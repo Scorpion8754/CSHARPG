@@ -182,9 +182,9 @@
             // 
             // PotionButton
             // 
-            this.PotionButton.Location = new System.Drawing.Point(93, 161);
+            this.PotionButton.Location = new System.Drawing.Point(12, 190);
             this.PotionButton.Name = "PotionButton";
-            this.PotionButton.Size = new System.Drawing.Size(82, 23);
+            this.PotionButton.Size = new System.Drawing.Size(75, 23);
             this.PotionButton.TabIndex = 11;
             this.PotionButton.Text = "Use Potion";
             this.PotionButton.UseVisualStyleBackColor = true;

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RPG
+﻿namespace RPG
 {
     public class Monster : Character
     {
@@ -17,6 +11,7 @@ namespace RPG
             name = "Giant Rat";
             strength = 3;
             maxHealth = health;
+            pots.Add(new HealthPotion());
         }
     }
 

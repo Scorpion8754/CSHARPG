@@ -28,15 +28,16 @@ namespace RPG
         }
         public virtual string combatMove(Character enemy)
         {
-            if (health < maxHealth / 2 && pots.Count > 1)
+            if (health < maxHealth / 2 && pots.Count > 0)
             {
+                string healvalue = pots[0].healthValue.ToString();
                 pots[0].Use(this);
-                return "heal";
+                return (name + " uses a health potion, restoring " + healvalue + " health.");
             }
             else
             {
                 attack(enemy);
-                return "attack";
+                return (name + " attacks " + enemy.name + " for " + strength.ToString() + " damage.");
             }
         }
 

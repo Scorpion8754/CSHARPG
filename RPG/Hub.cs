@@ -32,8 +32,7 @@ namespace RPG
                 if (playerTurn == false)
                 {
                     string action = theEnemy.combatMove(theHero);
-                    if (action == "attack") { printBox(theEnemy.name + " attacks " + theHero.name + " for " + theEnemy.strength.ToString() + " damage."); }
-                    if (action == "heal") { printBox(theEnemy.name + " uses a potion and restores" + theEnemy.pots[0].healthValue.ToString() + " health."); update(theEnemy); }
+                    printBox(action);
                     playerTurn = true;
                     combat();
                 }
